@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    .block {
+        display: block;
+        width: 30rem;
+        border: none;
+        background-color: #4caf50;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        padding: 1rem 1rem;
+    }
+
+    .content {
+
+        max-width: fit-content;
+        margin: auto;
+    }
+
+    .button_dıs {
+        border: 3px solid #4caf50;
+        border-radius: 5px;
+
+    }
+
+    .bas_taraf {
+        padding: 60px;
+        text-align: center;
+        background-image: url('https://www.pardus.org.tr/wp-content/uploads/2019/08/Pardus-03.png');
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+
+    }
+
+    .form_upload {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form_upload .submit-btn {
+        padding: 0.75rem;
+        display: block;
+        float: right;
+    }
+</style>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Bursa Pardus Deposu</title>
+    <div class="bas_taraf">
+        <h1>Bursa Kamu Hastaneleri</h1>
+        <p>Pardus Dosya Deposu</p>
+    </div>
+</head>
+<p id="upload-res"></p>
+<div class="form_upload">
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+
+        <div class="form">
+            <label> Yüklenecek Dosyayı Seçiniz:</label>
+            <input type="file" name="fileftp" />
+        </div>
+
+        <div>
+            <input type="submit" class ="submit-btn" name="upload-file-button" value="Upload" />
+        </div>
+        <script src="https://cdn.socket.io/3.1.1/socket.io.min.js" integrity="sha384-gDaozqUvc4HTgo8iZjwth73C6dDDeOJsAgpxBcMpZYztUfjHXpzrpdrHRdVp8ySO" crossorigin="anonymous"></script>
+       <script>
+          var socket = io.connect('http://localhost:3000');
+          socket.on('Upload', function (data) {
+            document.getElementById("upload-res").innerHTML = "Dosya Yüklenedi"
+            setInterval('window.location.reload()', 500);
+    })
+    
+       </script>
+    </form>
+</div>

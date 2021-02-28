@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<style>
+    .block{
+        display: block;
+        width: 30rem;
+        border: none;
+        background-color: #4caf50;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        padding: 1rem 1rem ;
+    }
+    .content{
+    
+        max-width: fit-content;
+        margin: auto;
+    }
+    .button_dıs{
+        border: 3px solid #4caf50;
+        border-radius: 5px;
+
+    }
+    .bas_taraf{
+        padding: 60px;
+        text-align: center;
+        background-image: url('https://www.pardus.org.tr/wp-content/uploads/2019/08/Pardus-03.png');
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Bursa Pardus Deposu</title>
+    <div class="bas_taraf">
+        <h1>Bursa Kamu Hastaneleri</h1>
+        <p>Pardus Dosya Deposu</p>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="content">
+    <button id="preseed" type="button" class="block button_dıs">Preseed Dosyaları</button>
+    &nbsp;&nbsp;&nbsp;
+    <button id="deb-paket" type="button" class="block button_dıs">Deb Paketleri</button>
+    &nbsp;&nbsp;&nbsp;
+    <button id="3parti" type="button" class="block button_dıs">3.Parti Yazılımlar</button>
+    &nbsp;&nbsp;&nbsp;
+    <button id="bash-script" type="button" class="block button_dıs">Bash Scriptler(Betikler)</button>
+    </div>
+    </div>
+</head>
+<body>
+    
+</body>
+<script>
+    const button = document.getElementById('preseed');
+    button.addEventListener('click', function(e){
+        console.log('butona basıldı')
+    })
+</script>
+</html>
